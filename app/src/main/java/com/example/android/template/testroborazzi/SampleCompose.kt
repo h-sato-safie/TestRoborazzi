@@ -12,13 +12,13 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun SampleText() {
-    val size = 40.sp
-    val spaceHeight = 60.dp
+    val size = 50.sp
+    val spaceHeight = 70.dp
     Column {
         Spacer(modifier = Modifier.height(spaceHeight))
         Text(text = "Hallo World!", fontSize = size)
         Spacer(modifier = Modifier.height(spaceHeight))
-        Text(text = "テストテストあいうえお１２３４５６７", fontSize = size)
+        Text(text = "ももももも＿めめめめめ＿すすすすす", fontSize = size)
         Spacer(modifier = Modifier.height(spaceHeight))
     }
 }
