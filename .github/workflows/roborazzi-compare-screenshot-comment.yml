@@ -25,6 +25,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Pre Test
+        run: |
+          echo "github.event.workflow_run.event = ${{github.event.workflow_run.event}}"
+          echo "github.event.workflow_run.event.pull_request.base.ref = ${{github.event.workflow_run.event.pull_request.base.ref}}"
+          echo "github.event.repository.default_branch = ${{github.event.repository.default_branch}}"
+          echo "github.event.workflow_run.event = ${{github.event.workflow_run.event}}"
+
       - uses: dawidd6/action-download-artifact@v2.28.0
         with:
           name: pr
@@ -146,6 +153,6 @@ jobs:
               # Comment out for demonstration purpose
               echo "Deleting $branch"
 
-              # git push origin --delete "$branch"
+              git push origin --delete "$branch"
             fi
           done
