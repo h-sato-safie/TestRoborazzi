@@ -1,10 +1,13 @@
 name: RoborazziCompareScreenshot
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+
+#on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
 
 
 #on:
