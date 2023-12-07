@@ -142,6 +142,7 @@ jobs:
       - name: Cleanup outdated companion branches
         run: |
           # Find outdated companion branches with last commit date
+          git fetch
           git branch -r --format="%(refname:lstrip=3)" | grep companion_ | while read -r branch; do
             last_commit_date_timestamp=$(git log -1 --format=%ct "origin/$branch")
             now_timestamp=$(date +%s)
