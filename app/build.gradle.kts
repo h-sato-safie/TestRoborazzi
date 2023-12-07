@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.roborazziPlugin)
 }
 
 android {
@@ -48,6 +49,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    testOptions.unitTests.apply {
+        isIncludeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -61,7 +66,14 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.test.ext.junit.ktx)
     testImplementation(libs.robolectric)
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.espresso.core)
+    testImplementation(libs.espresso.core.contrib)
+    testImplementation(platform(libs.compose.bom))
+    testImplementation(libs.ui.test.junit4)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
