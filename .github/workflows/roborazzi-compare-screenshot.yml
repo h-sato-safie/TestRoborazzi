@@ -35,6 +35,9 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - uses: dawidd6/action-download-artifact@v2.28.0
         continue-on-error: true
         with:
