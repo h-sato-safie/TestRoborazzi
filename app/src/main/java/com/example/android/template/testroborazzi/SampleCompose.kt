@@ -18,7 +18,7 @@ fun SampleText() {
         Spacer(modifier = Modifier.height(spaceHeight))
         Text(text = "Hallo World!", fontSize = size)
         Spacer(modifier = Modifier.height(spaceHeight))
-        Text(text = "ABCDE12345AA", fontSize = size)
+        Text(text = "あいうえおかきくけこ", fontSize = size)
         Spacer(modifier = Modifier.height(spaceHeight))
     }
 }
